@@ -1,5 +1,26 @@
 #metronome {
-    background-color:#00000;
+    background-color: #c4cecf;
     padding: 1em;
+    margin: 2em;
+    border-radius: 2em;
     text-align: center;
+}
+
+#btnDecreaseBPM {
+    background-color: #cfc4c4;
+}
+
+#btnIncreaseBPM {
+    background-color: #cfc4c4;
+}
+
+input {
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.2em;
+    text-align: center;
+}
+
+#txtBPM {
+    font-size: 2em;
 }
