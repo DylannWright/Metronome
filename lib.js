@@ -1,12 +1,35 @@
 // metronome
 console.log("Setting up metronome");
-const btnDecrease = document.getElementById("btnDecreaseBPM")
-const btnIncrease = document.getElementById("btnIncreaseBPM")
+const btnDecreaseBPM = document.getElementById("btnDecreaseBPM");
+const btnIncreaseBPM = document.getElementById("btnIncreaseBPM");
 const bpmInput = document.getElementById("txtBPM");
+const btnStartStop = document.getElementById("btnStartStop");
+const MAX_BPM = 120;
+const MIN_BPM = 50;
+var running = false;
+var bpm = 60;       // beats per minute
+var callback = undefined;
 
-//beats mer minute
-var bpm = 60;
+btnStartStop.addEventListener("click", function (e) {
+    running = !running;
+    btnStartStop.value = running ? "Stop" : "Start";
 
+    if (running) {
+        setSpeedAndStart();
+    }
+});
+
+function setSpeedAndStart() {
+    clearInterval(callback);
+    var ms = 60000 / bpm;
+    callback = setInterval(onTick, ms);
+}
+
+function onTick() {
+    console.log("Tick");
+}
+
+// add event handlers
 bpmInput.onchange = function (e) {
     bpm = parseInt(bpmInput.value);
     if (isNaN(bpm)) {
@@ -16,20 +39,29 @@ bpmInput.onchange = function (e) {
 }
 
 btnDecreaseBPM.onclick = function (e) {
-    bpm -= 1
-    console.log("bpm")
+    bpm -= 5;
     updateBPM();
-
 }
 
 btnIncreaseBPM.onclick = function (e) {
-    bpm += 1
-    console.log("bpm")
+    bpm += 5;
     updateBPM();
-
 }
+
+
+
 function updateBPM() {
-    bpmInput.value = bpm
+    // range check
+    if (bpm > MAX_BPM) {
+        bpm = MAX_BPM;
+    }
 
+    if (bpm < MIN_BPM) {
+        bpm = MIN_BPM;
+    }
+
+    bpmInput.value = bpm;
+    if (running) {
+        setSpeedAndStart();
+    }
 }
-
