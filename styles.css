@@ -1,30 +1,67 @@
+
 #metronome {
     background-color: #c4cecf;
     padding: 1em;
-    margin: 2em;
+    width: 70em;
     border-radius: 2em;
     text-align: center;
+    margin: auto;
 }
 
 #btnDecreaseBPM {
     background-color: #cfc4c4;
+    border-radius: 50%;
+    font-size: 2em;
+    width: 5em;
+    height: 5em;
+    border: 0.5em solid #fdbb2d;
+    transition-duration: 0.4s;
 }
+    #btnDecreaseBPM:hover {
+        background-color: #fdbb2d;
+        color: white;
+    }
 
 #btnIncreaseBPM {
     background-color: #cfc4c4;
+    border-radius: 50%;
+    font-size: 2em;
+    width: 5em;
+    height: 5em;
+    border: 0.5em solid #8b22c3;
+    transition-duration: 0.4s;
 }
+    #btnIncreaseBPM:hover {
+        background-color: #8b22c3;
+        color: white;
+    }
+
+
 
 body {
-    background-image: linear-gradient(to right, red,orange,yellow,orange,yellow,red);
+    background: rgb(139,34,195);
+    background: linear-gradient(90deg, rgba(139,34,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 
 input {
-    border-radius: 1em;
-    padding: 1em;
-    margin: 0.2em;
-    text-align: center;
+    
 }
 
 #txtBPM {
     font-size: 2em;
+    border-radius: 1em;
+    border: 0.5em solid #8b22c3;
+    padding: 1em;
+    margin: 0.2em;
+    text-align: center;
+    height: 3em;
+    background-color: #cfc4c4;
+}
+
+#btnStartStop {
+    background-color: #cfc4c4;
+    font-size: 1.5em;
+    padding: 1em;
+    border: 0px;
+    border-radius: 1em;
 }

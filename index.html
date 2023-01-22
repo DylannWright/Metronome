@@ -3,8 +3,12 @@
 <head>
     <title>Metronome</title>
     <link href="styles.css" rel="stylesheet" />
+    
 </head>
 <body>
+    <audio id="beep">
+        <source src="beep.mp3" type="audio/mp3">
+    </audio>
     <h1>Metronome</h1>
     <div id="metronome">
         <input class="bpm-change" type="button" value="-" id="btnDecreaseBPM">
@@ -18,5 +22,6 @@
 
     <p>Published under a creative commons licence</p>
     <script src="lib.js"></script>
+
 </body>
 </html>

@@ -6,9 +6,13 @@ const bpmInput = document.getElementById("txtBPM");
 const btnStartStop = document.getElementById("btnStartStop");
 const MAX_BPM = 120;
 const MIN_BPM = 50;
+var beep = document.getElementById("beep");
 var running = false;
 var bpm = 60;       // beats per minute
 var callback = undefined;
+var tickCount = 0;
+
+
 
 btnStartStop.addEventListener("click", function (e) {
     running = !running;
@@ -27,6 +31,15 @@ function setSpeedAndStart() {
 
 function onTick() {
     console.log("Tick");
+    tickCount += 1;
+    beep.play();
+    if (tickCount % 2 == 0) {
+        bpmInput.style.border = "0.5em solid #fdbb2d"
+    }
+    else {
+        bpmInput.style.border = "0.5em solid #8b22c3"
+    }
+    
 }
 
 // add event handlers
